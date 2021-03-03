@@ -1,0 +1,227 @@
+{
+  "nodes": [
+    {
+      "id": "n0",
+      "position": {
+        "x": -686,
+        "y": -294
+      },
+      "caption": "Provider",
+      "labels": [],
+      "properties": {
+        "npi": "1043215882",
+        "entity_type_code": "1",
+        "provider_last_name": "HENSLEY",
+        "provider_first_name": "JOSEPH",
+        "provider_middle_name": "",
+        "provider_name_prefix": "",
+        "provider_name_suffix": "",
+        "provider_credential": "",
+        "provider_business_address_1": "507 W MAIN ST",
+        "provider_business_address_2": "",
+        "provider_business_city": "HOHENWALD",
+        "provider_business_state": "TN",
+        "provider_business_zip5": "38462",
+        "primary_taxonomy_code": "207Q00000X"
+      },
+      "style": {
+        "radius": 100,
+        "caption-font-size": 40,
+        "property-font-size": 10
+      }
+    },
+    {
+      "id": "n1",
+      "position": {
+        "x": -46.44529010208697,
+        "y": -294
+      },
+      "caption": "Facility",
+      "labels": [],
+      "properties": {
+        "npi": "1003028770",
+        "entity_type_code": "2",
+        "provider_org_name": "SPRING HILL DERMATOLOGY PLC\t",
+        "provider_business_address_1": "1229 RESERVE BLVD\t",
+        "provider_business_address_2": "SUITE 200",
+        "provider_business_city": "SPRING HILL\t",
+        "provider_business_state": "TN",
+        "provider_business_zip5": "37174",
+        "primary_taxonomy_code": "207N00000X"
+      },
+      "style": {
+        "property-font-size": 10,
+        "property-font-weight": "normal",
+        "radius": 100
+      }
+    },
+    {
+      "id": "n2",
+      "position": {
+        "x": -366.2226450510435,
+        "y": -104.19218059569877
+      },
+      "caption": "Grouping",
+      "labels": [],
+      "properties": {
+        "grouping_name": "string"
+      },
+      "style": {
+        "radius": 100,
+        "caption-font-size": 50,
+        "property-font-size": 10
+      }
+    },
+    {
+      "id": "n3",
+      "position": {
+        "x": -366.2226450510435,
+        "y": 169.39077100520936
+      },
+      "caption": "Classification",
+      "labels": [],
+      "properties": {
+        "classification_name": "string"
+      },
+      "style": {
+        "radius": 100,
+        "property-font-size": 10
+      }
+    },
+    {
+      "id": "n4",
+      "position": {
+        "x": -366.22264505104346,
+        "y": -487.8974546730159
+      },
+      "caption": "Specialization",
+      "labels": [],
+      "properties": {
+        "specialization_name": "string"
+      },
+      "style": {
+        "property-font-size": 10,
+        "radius": 100
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n0",
+      "fromId": "n0",
+      "toId": "n1",
+      "type": "REFERS_TO",
+      "properties": {
+        "patient_count": "29",
+        "transaction_count": "44",
+        "average_day_wait": "47.455",
+        "std_day_wait": "56.183"
+      },
+      "style": {
+        "type-font-size": 13,
+        "property-font-size": 10
+      }
+    },
+    {
+      "id": "n1",
+      "fromId": "n0",
+      "toId": "n2",
+      "type": "IN_GROUPING",
+      "properties": {},
+      "style": {
+        "type-font-size": 13
+      }
+    },
+    {
+      "id": "n2",
+      "fromId": "n0",
+      "toId": "n3",
+      "type": "IN_CLASSIFICATION",
+      "properties": {},
+      "style": {
+        "type-font-size": 13
+      }
+    },
+    {
+      "id": "n3",
+      "fromId": "n0",
+      "toId": "n4",
+      "type": "IN_SPECIALIZATION",
+      "properties": {},
+      "style": {
+        "type-font-size": 13
+      }
+    },
+    {
+      "id": "n4",
+      "fromId": "n1",
+      "toId": "n4",
+      "type": "IN_SPECIALIZATION",
+      "properties": {},
+      "style": {
+        "type-font-size": 13
+      }
+    },
+    {
+      "id": "n5",
+      "fromId": "n1",
+      "toId": "n2",
+      "type": "IN_GROUPING",
+      "properties": {},
+      "style": {
+        "type-font-size": 13
+      }
+    },
+    {
+      "id": "n6",
+      "fromId": "n1",
+      "toId": "n3",
+      "type": "IN_CLASSIFICATION",
+      "properties": {},
+      "style": {
+        "type-font-size": 13
+      }
+    }
+  ],
+  "style": {
+    "node-color": "#ffffff",
+    "border-width": 4,
+    "border-color": "#000000",
+    "radius": 50,
+    "node-padding": 5,
+    "outside-position": "auto",
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#000000",
+    "caption-font-size": 50,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-color": "#000000",
+    "label-background-color": "#ffffff",
+    "label-border-color": "#000000",
+    "label-border-width": 4,
+    "label-font-size": 40,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "inline",
+    "detail-orientation": "parallel",
+    "arrow-width": 5,
+    "arrow-color": "#000000",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "type-color": "#000000",
+    "type-background-color": "#ffffff",
+    "type-border-color": "#000000",
+    "type-border-width": 0,
+    "type-font-size": 40,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-color": "#000000",
+    "property-font-size": 40,
+    "property-font-weight": "normal"
+  }
+}
