@@ -117,39 +117,78 @@ SET ref.patient_count = line.patient_count,
 
 
 
-// RELATIONSHIP: Specialization
-// ****************************
-// Select the Providers and Facilities with the matching primary taxonomy codes
-MATCH (p:Provider{ primary_taxonomy_code: line.taxonomy_code })
-MATCH (f:Facility{ primary_taxonomy_code: line.taxonomy_code })
+// RELATIONSHIP: (Provider)-[:IN_SPECIALIZATION]->(Specialization)
+// ***************************************************************
+// Select the Providers with the matching primary taxonomy codes in Specialization
+MATCH (p:Provider)
+MATCH (s:Specialization)
+WHERE p.primary_taxonomy_code = s.taxonomy_code
 
 // Create the Specialization relationship
 CREATE (p)-[:IN_SPECIALIZATION]->(s)
+;
+
+
+
+// RELATIONSHIP: (Facility)-[:IN_SPECIALIZATION]->(Specialization)
+// ***************************************************************
+// Select the Facilities with the matching primary taxonomy codes in Specialization
+MATCH (f:Facility)
+MATCH (s:Specialization)
+WHERE f.primary_taxonomy_code = s.taxonomy_code
+
+// Create the Specialization relationship
 CREATE (f)-[:IN_SPECIALIZATION]->(s)
 ;
 
 
 
-// RELATIONSHIP: Classification
-// ****************************
-// Select the Providers and Facilities with the matching primary taxonomy codes
-MATCH (p:Provider{ primary_taxonomy_code: line.taxonomy_code })
-MATCH (f:Facility{ primary_taxonomy_code: line.taxonomy_code })
+// RELATIONSHIP: (Provider)-[:IN_CLASSIFICATION]->(Classification)
+// ***************************************************************
+// Select the Providers with the matching primary taxonomy codes in Classification
+MATCH (p:Provider)
+MATCH (c:Classification)
+WHERE p.primary_taxonomy_code = c.taxonomy_code
 
 // Create the Classification relationship
-CREATE (p)-[:IN_CLASSIFICATION]->(s)
-CREATE (f)-[:IN_CLASSIFICATION]->(s)
+CREATE (p)-[:IN_CLASSIFICATION]->(c)
 ;
 
 
 
-// RELATIONSHIP: Groupings
-// ***********************
-// Select the Providers and Facilities with the matching primary taxonomy codes
-MATCH (p:Provider{ primary_taxonomy_code: line.taxonomy_code })
-MATCH (f:Facility{ primary_taxonomy_code: line.taxonomy_code })
+// RELATIONSHIP: (Facility)-[:IN_CLASSIFICATION]->(Classification)
+// ***************************************************************
+// Select the Facilities with the matching primary taxonomy codes in Classification
+MATCH (f:Facility)
+MATCH (c:Classification)
+WHERE f.primary_taxonomy_code = c.taxonomy_code
+
+// Create the Classification relationship
+CREATE (f)-[:IN_CLASSIFICATION]->(c)
+;
+
+
+
+// RELATIONSHIP: (Provider)-[:IN_GROUPING]->(Grouping)
+// ***************************************************************
+// Select the Providers with the matching primary taxonomy codes in Grouping
+MATCH (p:Provider)
+MATCH (g:Grouping)
+WHERE p.primary_taxonomy_code = g.taxonomy_code
 
 // Create the Grouping relationship
-CREATE (p)-[:IN_GROUPING]->(s)
-CREATE (f)-[:IN_GROUPING]->(s)
+CREATE (p)-[:IN_GROUPING]->(g)
+;
+
+
+
+// RELATIONSHIP: (Facility)-[:IN_GROUPING]->(Grouping)
+// ***************************************************************
+// Select the Facilities with the matching primary taxonomy codes in Grouping
+MATCH (f:Facility)
+MATCH (g:Grouping)
+WHERE f.primary_taxonomy_code = g.taxonomy_code
+
+// Create the Grouping relationship
+CREATE (f)-[:IN_GROUPING]->(g)
 ;
