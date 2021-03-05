@@ -1,8 +1,9 @@
 // Needed CSV Exports from Database
 // ********************************
+// Checkout notebook/maeva-05-export-csv-for-neo4j.ipynb for implementation details
 // - providers.csv: Exported from SQL-Lite npidata with applied filters: entity_type_code == 1
 // - facilities.csv: Exported from SQL-Lite npidata with applied filters: entity_type_code == 2
-// - filtered_hop_teaming.csv: Exported from SQL-Lite filtered_hop_teaming
+// - filtered_hop_teaming.csv: Exported from SQL-Lite filtered_hop_teaming: Check notebook/maeva-04-filtering-hop-teaming-to-smaller-table.ipynb for implementation details
 // - specializations.csv: Exported from SQL-Lite taxonomy with only taxonomy_code and non-null Specializations
 // - classifications.csv: Exported from SQL-Lite taxonomy with only taxonomy_code and non-null Classifications
 // - groupings.csv: Exported from SQL-Lite taxonomy with only taxonomy_code and non-null Groupings
