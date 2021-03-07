@@ -37,7 +37,7 @@ SET p.last_name = line.provider_last_name,
     p.city = line.provider_business_city,
     p.state = line.provider_business_state,
     p.zip = line.provider_business_zip5,
-    p.primary_taxonomy_code = line.taxonomy_code
+    p.primary_taxonomy_code = line.primary_taxonomy
 ;
 
 
@@ -57,7 +57,7 @@ SET f.org_name = line.provider_org_name,
     f.city = line.provider_business_city,
     f.state = line.provider_business_state,
     f.zip = line.provider_business_zip5,
-    f.primary_taxonomy_code = line.taxonomy_code
+    f.primary_taxonomy_code = line.primary_taxonomy
 ;
 
 
